@@ -1,30 +1,24 @@
-
 package problem1.mybst;
-
-
 import problem1.node.TreeNode;
 import problem4.myqueue.MyQueue;
 import problem4.myqueue.Node;
 
-
 // to implement BinarySearchTree
 public class MyBinarySearchTree {
-
-
-    private TreeNode newnode, root, tmp;
+    private TreeNode newnode, root, tmp;   //PRIVATELY DEFINNED VARIABLES TO IMPLEMENT GETTER SETTER METHODS..
     private static int count;
     private MyQueue pre;
     private MyQueue post;
 
-    public MyBinarySearchTree() {
-        tmp = null;
+    public MyBinarySearchTree()    // DEFAULT CONSTRUCTOR
+        {   tmp = null;
         root = null;
         MyBinarySearchTree.count = 0;
         post=new MyQueue();
         pre=new MyQueue();
     }
 
-    //seeting root node
+                                        //seeting root node
     public void setRoot()
     {
         newnode=new TreeNode();
@@ -35,46 +29,52 @@ public class MyBinarySearchTree {
             newnode=null;
         }
     }
-    public TreeNode getRoot()
+    public TreeNode getRoot()       // GETTER METHOD FOR ROOT VARIABLE
     {
         return root;
     }
-    public TreeNode getNewnode()
+    public TreeNode getNewnode()     //GETTER METHOD FOR NEWNODE VARIABLE
     {
         return newnode;
     }
 
-    public void setNewnode(TreeNode newnode)
-    {
-        this.newnode = newnode;
-    }
 
-    public void setRoot(TreeNode root)
+
+    public void setRoot(TreeNode root)     //SETTER METHOD FOR ROOT VARIABLE
     {
         this.root = root;
     }
 
-    public TreeNode getTmp()
+    public void setNewnode(TreeNode newnode)     //SETTER METHOD FOR NEWNODE VARIABLE
+    {
+        this.newnode = newnode;
+    }
+
+    public TreeNode getTmp()                  //GETTER METHOD OF TMP VARIABLE
     {
         return tmp;
     }
 
-    public void setTmp(TreeNode tmp)
+    public void setTmp(TreeNode tmp)      // SETTER METHOD OF TMP VARIABLE
     {
         this.tmp = tmp;
     }
+    public int getCount()         //GETTER OF COUNT VARIABLE
+    {
+        return count;
+    }
 
-    public void setCount(int ctr)
+    public void setCount(int ctr)    //SETTER OF COUNT VARIABLE
     {
         MyBinarySearchTree.count = ctr;
     }
 
-    public MyQueue getPre()
+    public MyQueue getPre()    //GETTER
     {
         return pre;
     }
 
-    public void setPre(MyQueue pre)
+    public void setPre(MyQueue pre)  //SETTER
     {
         this.pre = pre;
     }
@@ -89,28 +89,22 @@ public class MyBinarySearchTree {
         this.post = post;
     }
 
-    public int getCount()
-    {
-        return count;
-    }
-
-    //setting binary tree
-    public void insert(TreeNode tmproot)
+    public void insert(TreeNode tmproot)     // Setting the binary tree
     {
         if(newnode==null)
         {
             newnode=new TreeNode();
         }
 
-        try {
+        try {                                                // try catch given as null pointer exception can occur
                 if (newnode.getData() <= tmproot.getData())
                 {
-                    System.out.println("left traversal...");
+                    System.out.println("TRAVERSAL OF THE LEFT SIDE");
                     if (tmproot.getLeft() == null)
                     {
                         tmproot.setLeft(newnode);
-                        System.out.println("node inserted left");
-                        pre.enqueue(new Node(newnode));//only left insertion
+                        System.out.println("left node inserted ");
+                        pre.enqueue(new Node(newnode));               //only left insertion
                         newnode=null;
                         return;
                     }
@@ -126,7 +120,7 @@ public class MyBinarySearchTree {
         try {
                 if (newnode.getData() > tmproot.getData())
                 {
-                    System.out.println("Right traversal...");
+                    System.out.println("TRAVERSAL OF THE LEFT SIDE");
                     if (tmproot.getRight() == null)
                     {
                         tmproot.setRight(newnode);
@@ -157,33 +151,26 @@ public class MyBinarySearchTree {
         countNotLeft(node.getRight());
 
     }
-    //preorder
-    public void preOrder(TreeNode node) {
-        if (node == null)
-        {
-            return;
-        }
 
-
-
+    public void preOrder(TreeNode node)   ////preorder
+        { if (node == null)
+            {
+                return;
+            }
         preOrder(node.getLeft());
         preOrder(node.getRight());
     }
 
-//postorder
-    public void postOrder(TreeNode node)
+
+    public void postOrder(TreeNode node)       ////postorder
     {
         if(node==null)
         {
             return;
         }
-
         postOrder(node.getLeft());
         postOrder(node.getRight());
-
-
     }
-
 }
 
 

@@ -1,4 +1,3 @@
-
 package problem4.myqueue;
 // to create queue to store pre - order successor
 
@@ -9,9 +8,7 @@ public class MyQueue {
     private Node front,end,tmp;
    private int size;
 
-
-
-    public MyQueue()
+   public MyQueue()            // DEFAULT CONSTRUCTOR
     {
        front=null;
        end=null;
@@ -34,8 +31,6 @@ public class MyQueue {
     public void setSize(int size) {
         this.size = size;
     }
-
-
 
     public Node getFront() {
         return front;
@@ -72,8 +67,6 @@ public class MyQueue {
         System.out.println("\b");
         queue.tmp=queue.front;
     }
-
-
 
     public void enqueue(Node node)
     {

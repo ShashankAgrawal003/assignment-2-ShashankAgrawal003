@@ -9,8 +9,7 @@ public class Student
    private  int rollno,backlog,apperingcount;
    private  Scanner sc;
 
-
-    public Student()
+   public Student()
     {
         sc=new Scanner(System.in);
         System.out.print("Name :");

@@ -1,9 +1,8 @@
-/*
- *  Created by IntelliJ IDEA.
- *  User: Vaibhav
- *  Date: 23-Mar-20
- *  Time: 7:06 PM
- */
+//              DS  ASSIGNMENT 2        NAME-SHASHANK AGRAWAL  J SEC 56
+//Q5. Implement a circular queue to process the given list of students as per the following conditions:
+//1)-Element will be removed from the queue if its backLog counter value is equal to zero.
+//2)-You can only process the front element, processing means "backLog - appearingCount".
+//3)-For any element appearing count will not be greater than 2.
 package problem5.main;
 
 import problem5.circularqueue.MyCircularQueue;

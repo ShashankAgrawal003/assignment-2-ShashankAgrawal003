@@ -1,8 +1,5 @@
-
 package problem1.node;
-
 import java.util.Scanner;
-
 public class TreeNode
 {
     private TreeNode left;
@@ -15,34 +12,34 @@ public class TreeNode
         this.data = data;
 
     }
-    //default constructor
-    public TreeNode() {
-        System.out.print("Enter integer value : ");
-        data=new Scanner(System.in).nextInt();
+
+    public TreeNode()                                //default constructor
+        {  System.out.print("Enter integer value : ");
+        data=new Scanner(System.in).nextInt();       //DIRECTLY INVOKING DATA VARIBALE BY USER THROUGH SCANNER CLASS(REDUCED 2-3 LINES)
         left=right=null;
 
     }
-    public TreeNode getLeft() {
-        return left;
+    public TreeNode getLeft()   // GETTER METHOD OF LEFT VARIABLE
+    {    return left;
     }
 
-    public void setLeft(TreeNode left) {
-        this.left = left;
+    public void setLeft(TreeNode left)   // SETTER METHOD OF LEFT VARIABLE
+        {   this.left = left;
     }
 
-    public TreeNode getRight() {
-        return right;
+    public TreeNode getRight()     // GETTER METHOD OF RIGHT VARIABLE
+        {   return right;
     }
 
-    public void setRight(TreeNode right) {
-        this.right = right;
+    public void setRight(TreeNode right)  // GETTER METHOD OF LEFT VARIABLE
+        {   this.right = right;
     }
 
-    public int getData() {
-        return data;
+    public int getData()      // GETTER METHOD OF DATA VARIABLE
+        {   return data;
     }
 
-    public void setData(int data) {
+    public void setData(int data) {  // SETTER METHOD FOR DATA VARIABLE
         this.data = data;
     }
 }
